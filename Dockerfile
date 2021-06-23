@@ -1,6 +1,9 @@
 FROM ubuntu
-RUN apt update
-RUN apt install -y nginx
-RUN echo 'Hi, I am in your container' \
-        >/usr/share/nginx/html/index.html
+RUN apt-get -y update
+RUN apt-get -y install apache2
+
+RUN echo 'Hello World from Docker!' > /var/www/html/index.html
+
+
+CMD ["/usr/sbin/apache2ctl", "-D","FOREGROUND"]
 EXPOSE 80
