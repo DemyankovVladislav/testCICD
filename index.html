@@ -27,11 +27,8 @@
         <p class="lead">Пользователь: {{ .Name }}<br>Возраст: {{ .Age }}<br>Деньги: {{ .Money }}</p>
 
 
-            {{ if gt  .Age 20 }}
             <p class="lead">Ну привет!</p>
-            {{ else }}
             <p class="lead">А ты кто?</p>
-            {{ end }}
         
             {{range .Hobbies}}
                 <p class="lead"><b>{{ . }}</b></p>
