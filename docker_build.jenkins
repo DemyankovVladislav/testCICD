@@ -16,7 +16,7 @@ pipeline {
                 echo " ============== start building image =================="
                 dir ('.') {
                 	sh 'docker build -t devopser/testcicd:latest . '
-                    sh 'docker run -p 1234:80-d devopser/testcicd:latest'
+                    sh 'docker run -p 1234:80 -d devopser/testcicd:latest'
                 }
             }
         }
