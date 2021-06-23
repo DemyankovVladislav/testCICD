@@ -1,5 +1,6 @@
 FROM ubuntu
-RUN apt-get -y update
-RUN apt-get -y install apache2
-RUN cp ./index.html > /var/www/html/index.html
+RUN apt-get update
+RUN apt-get install -y nginx
+RUN cp ./index.html \
+        >/usr/share/nginx/html/index.html
 EXPOSE 80
