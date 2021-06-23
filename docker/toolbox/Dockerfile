@@ -1,5 +1,6 @@
 FROM alpine
-RUN apk add --no-cache curl wget busybox-extras netcat-openbsd python py-pip bash && \
-    pip install awscli
-RUN apk --purge -v del py-pip
-CMD tail -f /dev/null
+RUN apt-get update
+RUN apt-get install -y nginx
+RUN echo 'Hi, I am in your container' \
+        >/usr/share/nginx/html/index.html
+EXPOSE 80
