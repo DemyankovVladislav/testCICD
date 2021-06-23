@@ -1,7 +1,7 @@
 FROM ubuntu
 RUN apt-get update
 RUN apt-get install -y nginx
-RUN echo 'Hi, I am in your container' \
-        >/usr/share/nginx/html/index.html
+RUN rm -rf /usr/share/nginx/html/*
+COPY ./index.html /usr/share/nginx/html/
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 EXPOSE 80
