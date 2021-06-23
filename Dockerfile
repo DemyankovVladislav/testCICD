@@ -1,4 +1,4 @@
-FROM alpine
+FROM ubuntu
 RUN apt update
 RUN apt install -y nginx
 RUN echo 'Hi, I am in your container' \
