@@ -1,6 +1,4 @@
-FROM ubuntu
-RUN apt-get update
-RUN apt-get install -y nginx
+FROM nginx
 RUN rm -rf /var/www/html/*
 COPY ./index.html /var/www/html/
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
